@@ -37,6 +37,7 @@ h1 {
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
     border-right: 1px solid #eee;
     background-color: #820D20;
+    width: 90px;
 }
 
 .sidebar .nav {
@@ -60,6 +61,10 @@ h1 {
     background-color: #F0433A;
 }
 
+.sidebar .nav-link:hover {
+    color: snow;
+}
+
 /*
  * Dashboard
  */
@@ -72,4 +77,8 @@ h1 {
 .placeholder img {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+}
+
+.dashboardMain {
+
 }
