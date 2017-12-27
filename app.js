@@ -13,6 +13,8 @@ const config = require('./config/database');
 var LocalStrategy = require('passport-local'), Strategy;
 
 
+mongoose.Promise = global.Promise;
+/*
 mongoose.connect(config.uri, (err) => {
     if(err) {
         console.log('Could not connect to database: ', err);
@@ -21,7 +23,9 @@ mongoose.connect(config.uri, (err) => {
         console.log('Connected to database: ' + config.db);
     }
 });
-const db = mongoose.connection;
+*/
+mongoose.connect('mongodb://localhost:27017/loginapp');
+// const db = mongoose.connection;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
