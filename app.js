@@ -82,8 +82,12 @@ app.use(function(req, res, next) {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
+    // identifies if user is logged in
+    res.locals.user = req.user || null;
     next();
 });
+
+
 
 app.use('/', routes);
 app.use('/users', users);
