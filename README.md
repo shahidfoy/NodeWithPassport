@@ -11,10 +11,13 @@ Make sure to have node installed: https://nodejs.org/
 along with mongodb: https://www.mongodb.com/
 
 Once you download the files cd into their location and run the following command on the root file:
-#npm install
+
+# npm install
 
 to run server use:
-#node app
+
+# node app
 
 if you have nodemon installed you can run:
-#nodemon app
+
+# nodemon app
