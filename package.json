@@ -1,5 +1,5 @@
 {
-  "name": "Node Auth",
+  "name": "NodeAuth",
   "version": "1.0.0",
   "description": "node with passport",
   "main": "app.js",
