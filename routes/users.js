@@ -89,11 +89,11 @@ passport.use(new LocalStrategy(
 
 router.post('/login',
     passport.authenticate('local', {
-        successRedirect:'/',
+        successRedirect:'/dashboard',
         failureRedirect: '/users/login',
         failureFlash: true
     }), function(req, res) {
-        res.redirect('/');
+        res.redirect('/dashboard');
 });
 
 router.get('/logout', function(req, res) {
