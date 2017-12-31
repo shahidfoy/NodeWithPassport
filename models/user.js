@@ -5,23 +5,23 @@ const bcrypt = require('bcryptjs');
 //mongoose.connect('mongodb://localhost:27017/loginapp');
 
 var UserSchema = mongoose.Schema({
-    username: {
-        type: String,
-        index: true,
-        required: true,
-        unique: true
-    },
-    password: {
-        type: String,
-        required: true
-    },
     email: {
         type: String,
         required: true,
         unique: true,
         lowercase: true
     },
+    password: {
+        type: String,
+        required: true
+    },
     name: {
+        type: String
+    },
+    googleId: {
+        type: String
+    },
+    facebookId: {
         type: String
     }
 
@@ -49,6 +49,7 @@ module.exports.createUser = function(newUser, callback) {
     });
 };
 */
+
 
 // mongoose queries
 module.exports.getUserByUsername = function(username, callback) {

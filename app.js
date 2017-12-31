@@ -6,11 +6,10 @@ const exphbs = require('express-handlebars');
 const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 const session = require('express-session');
-const passport = require('passport');
-const mongo = require('mongodb');
 const mongoose = require('mongoose');
 const config = require('./config/database');
-var LocalStrategy = require('passport-local'), Strategy;
+const passport = require('passport');
+require('./services/passport');
 
 
 mongoose.Promise = global.Promise;
@@ -29,6 +28,7 @@ mongoose.connect('mongodb://localhost:27017/loginapp');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var auth = require('./routes/auth');
 
 var app = express();
 
@@ -91,6 +91,7 @@ app.use(function(req, res, next) {
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/auth', auth);
 
 app.set('port', (process.env.PORT || 3000));
 

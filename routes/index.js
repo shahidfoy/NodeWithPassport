@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/dashboard', ensureAuthenticated, function(req, res) {
-   res.render('dashboard');
+   res.render('dashboard', { name: res.locals.user.name });
 });
 
 router.get('/garage', ensureAuthenticated, function(req, res) {
