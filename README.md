@@ -18,7 +18,7 @@ to run server use:
 
 # node app
 
-if you have nodemon installed you can run:
+or if you have nodemon installed you can run:
 
 # nodemon app
 
