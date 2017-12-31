@@ -21,3 +21,19 @@ to run server use:
 if you have nodemon installed you can run:
 
 # nodemon app
+
+
+===========================
+OAuth with google+ and facebook
+===========================
+In the config folder create a file named
+keys.js
+
+Then place your google dev and facebook dev keys in the code like so:
+
+module.exports= {
+    googleClientID: 'clientID',
+    googleClientSecret: 'secret',
+    facebookClientID: 'clientID',
+    facebookClientSecret: 'secret'
+};
