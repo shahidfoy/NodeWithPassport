@@ -30,11 +30,11 @@ In the config folder create a file named \n
 keys.js \n
 
 Then place your google dev and facebook dev keys in the code like so: 
-'''
+```
 module.exports= { 
     googleClientID: 'clientID', 
     googleClientSecret: 'secret', 
     facebookClientID: 'clientID',
     facebookClientSecret: 'secret' 
 };
-'''
+```
