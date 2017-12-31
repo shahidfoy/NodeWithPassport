@@ -45,7 +45,11 @@ module.exports= {
 };
 ```
 
-make sure to place proper OAuth redirect URI's
+make sure to place proper OAuth redirect URI's inside of the google and facebook developer websites 
+
+https://developers.facebook.com
+
+https://console.developers.google.com
 
 for example facebooks Valid OAuth redirect URIs should look something like:
 
