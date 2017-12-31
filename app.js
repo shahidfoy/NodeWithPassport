@@ -9,6 +9,7 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 const passport = require('passport');
+const keys = require('./config/keys');
 require('./services/passport');
 
 
@@ -47,6 +48,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Express Session
 app.use(session({
+    // 30 days
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [keys.cookieKey],
     secret: 'something',
     saveUninitialized: true,
     resave: true
