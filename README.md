@@ -22,6 +22,10 @@ if you have nodemon installed you can run:
 
 # nodemon app
 
+once the website is running on the server it should be located at
+
+http://localhost:3000
+
 
 =======================================
 OAuth with google+ and facebook
