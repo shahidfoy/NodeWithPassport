@@ -14,6 +14,8 @@ Once you download the files cd into their location and run the following command
 
 # npm install
 
+this will install all of the packages needed to run the project
+
 to run server use:
 
 # node app
