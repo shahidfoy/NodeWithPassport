@@ -112,7 +112,3 @@ function animate() {
 init()
 animate()
 
-var dataUrl = canvas.toDataUrl()
-var jumbotron = document.getElementsByClassName('jumbotron')
-document.getElementById('mainDisplay').style.background='url(' + dataUrl + ')'
-
