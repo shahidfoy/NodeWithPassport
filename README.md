@@ -40,11 +40,12 @@ module.exports= {
 ```
 
 make sure to place proper OAuth redirect URI's
+
 for example facebooks Valid OAuth redirect URIs should look something like:
 
 http://localhost:3000/auth/facebook/callback 
 
-for google it should be:
+for google it has two which should be:
 
 Authorized JavaScript origins
 
