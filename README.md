@@ -38,3 +38,18 @@ module.exports= {
     facebookClientSecret: 'secret' 
 };
 ```
+
+make sure to place proper OAuth redirect URI's
+for example facebooks Valid OAuth redirect URIs should look something like:
+
+http://localhost:3000/auth/facebook/callback 
+
+for google it should be:
+
+Authorized JavaScript origins
+
+http://localhost:3000
+
+Authorized redirect URIs
+
+http://localhost:3000/auth/google/callback 
