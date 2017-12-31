@@ -26,14 +26,14 @@ if you have nodemon installed you can run:
 ==========================================
 OAuth with google+ and facebook
 ===========================
-In the config folder create a file named
-keys.js
+In the config folder create a file named \n
+keys.js \n
 
-Then place your google dev and facebook dev keys in the code like so:
+Then place your google dev and facebook dev keys in the code like so: \n
 
-module.exports= {
-    googleClientID: 'clientID',
-    googleClientSecret: 'secret',
-    facebookClientID: 'clientID',
-    facebookClientSecret: 'secret'
+module.exports= { \n
+    googleClientID: 'clientID', \n
+    googleClientSecret: 'secret', \n
+    facebookClientID: 'clientID', \n
+    facebookClientSecret: 'secret' \n
 };
