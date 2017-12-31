@@ -18,7 +18,6 @@ router.get('/login', function(req, res) {
 router.post('/register', function(req, res) {
     var name = req.body.name;
     var email = req.body.email;
-    var username = req.body.username;
     var password = req.body.password;
     var password2 = req.body.password2;
 
@@ -26,7 +25,6 @@ router.post('/register', function(req, res) {
     req.checkBody('name', 'Name is required').notEmpty();
     req.checkBody('email', 'Email is required').notEmpty();
     req.checkBody('email', 'Email is not valid').isEmail();
-    req.checkBody('username', 'username is required').notEmpty();
     req.checkBody('password', 'Password is required').notEmpty();
     req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
 
@@ -40,7 +38,6 @@ router.post('/register', function(req, res) {
         var newUser = new User({
             name: name,
             email: email,
-            username: username,
             password: password
         });
 
@@ -57,23 +54,33 @@ router.post('/register', function(req, res) {
     }
 });
 
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
-});
 
-passport.deserializeUser(function(id, done) {
-    User.getUserById(id, function(err, user) {
-        done(err, user);
-    });
-});
+passport.use(new LocalStrategy({
+        usernameField: 'email',
+        passwordField: 'password',
+        passReqToCallback: true
 
-passport.use(new LocalStrategy(
-   function(username, password, done) {
-       User.getUserByUsername(username, function(err, user) {
+    // current work area
+},
+    function(req, email, password, done) {
+        req.checkBody('email', 'Invalid email').notEmpty().isEmail();
+        req.checkBody('password', 'Invalid password').notEmpty();
+
+        var errors = req.validationErrors();
+        if(errors) {
+            var messages = [];
+            errors.forEach(function(error) {
+                messages.push(error.msg);
+            });
+            return done(null, false, req.flash('error', messages))
+        }
+
+        User.findOne({'email' : email}, function(err, user) {
            if(err) throw err;
-           if(!user) {
-               return done(null, false, {message: 'Unknown User'});
-           }
+
+            if(!user) {
+                return done(null, false, {message: 'No user found.'});
+            }
 
            User.comparePassword(password, user.password, function(err, isMatch) {
                if(err) throw err;

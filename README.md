@@ -14,10 +14,53 @@ Once you download the files cd into their location and run the following command
 
 # npm install
 
+this will install all of the packages needed to run the project
+
 to run server use:
 
 # node app
 
-if you have nodemon installed you can run:
+or if you have nodemon installed you can run:
 
 # nodemon app
+
+once the website is running on your local server it should be located at
+
+http://localhost:3000
+
+
+=======================================
+OAuth with google+ and facebook
+===========================
+In the config folder create a file named 
+'keys.js'
+
+Then place your google dev and facebook dev keys in the code like so: 
+```
+module.exports= { 
+    googleClientID: 'clientID', 
+    googleClientSecret: 'secret', 
+    facebookClientID: 'clientID',
+    facebookClientSecret: 'secret' 
+};
+```
+
+# make sure to place proper OAuth redirect URI's inside of the google and facebook developer websites 
+
+https://developers.facebook.com
+
+https://console.developers.google.com
+
+for example facebooks Valid OAuth redirect URIs should look something like:
+
+http://localhost:3000/auth/facebook/callback 
+
+for google it has two which should be:
+
+Authorized JavaScript origins
+
+http://localhost:3000
+
+Authorized redirect URIs
+
+http://localhost:3000/auth/google/callback 

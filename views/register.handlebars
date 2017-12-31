@@ -1,4 +1,5 @@
 <div class="container">
+    <br>
     <h2 class="page-header">Register</h2>
     {{#if errors}}
         {{#each errors}}
@@ -7,14 +8,17 @@
             </div>
         {{/each}}
     {{/if}}
+
+    <br>
+    <a class="btn btn-primary btn-block" href="/auth/facebook"><i class="fab fa-facebook-square"></i> Facebook Sign Up </a>
+    <br>
+    <a class="btn btn-danger btn-block" href="/auth/google"><i class="fab fa-google-plus"></i> Google Sign Up </a>
+
+    <br>
     <form method="post" action="/users/register">
         <div class="form-group">
             <label>Name</label>
             <input type="text" class="form-control" placeholder="name" name="name">
-        </div>
-        <div class="form-group">
-            <label>Username</label>
-            <input type="text" class="form-control" placeholder="Username" name="username">
         </div>
         <div class="form-group">
             <label>Email</label>
@@ -30,4 +34,6 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
+
+
 </div>
