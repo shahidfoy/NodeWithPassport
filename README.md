@@ -41,7 +41,7 @@ http://localhost:3000
 OAuth with google+ and facebook
 ===========================
 In the config folder create a file named
-'keys.js'
+'dev.js'
 
 Then place your google dev and facebook dev keys in the code like so:
 ```
