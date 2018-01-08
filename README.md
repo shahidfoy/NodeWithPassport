@@ -54,6 +54,11 @@ module.exports= {
 };
 ```
 
+if you are using mongo on your localhost:27017 for the mongoURI field you can use:
+```
+'mongodb://localhost:27017/loginapp'
+```
+
 # make sure to create OAuth client keys and place proper OAuth redirect URI's inside of the google and facebook developer websites
 
 https://developers.facebook.com
