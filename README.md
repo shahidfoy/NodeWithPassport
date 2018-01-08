@@ -47,7 +47,8 @@ module.exports= {
     googleClientID: 'clientID',
     googleClientSecret: 'secret',
     facebookClientID: 'clientID',
-    facebookClientSecret: 'secret'
+    facebookClientSecret: 'secret',
+    mongoURI: 'ADD_the_mongoDB_URL_here'
 };
 ```
 
