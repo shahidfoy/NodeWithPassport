@@ -24,7 +24,7 @@ mongoose.connect(config.uri, (err) => {
     }
 });
 */
-mongoose.connect('mongodb://localhost:27017/loginapp');
+mongoose.connect(keys.mongoURI);
 // const db = mongoose.connection;
 
 var routes = require('./routes/index');
