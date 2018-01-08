@@ -1,7 +1,8 @@
 # NodeWithPassport
 
 Web app login auth created using Node.js and Passport
-App Preview: https://app-node-auth.herokuapp.com/ 
+
+App Preview: https://app-node-auth.herokuapp.com/
 
 ==================================
 GETTING STARTED
