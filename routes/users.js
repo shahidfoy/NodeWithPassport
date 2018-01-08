@@ -58,8 +58,8 @@ router.post('/register', function(req, res) {
 passport.use(new LocalStrategy({
         usernameField: 'email',
         passwordField: 'password',
-        passReqToCallback: true
-
+        passReqToCallback: true,
+        proxy: true
     // current work area
 },
     function(req, email, password, done) {
