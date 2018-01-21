@@ -14,18 +14,8 @@ require('./services/passport');
 
 
 mongoose.Promise = global.Promise;
-/*
-mongoose.connect(config.uri, (err) => {
-    if(err) {
-        console.log('Could not connect to database: ', err);
-    } else {
-        // console.log(config.secret);
-        console.log('Connected to database: ' + config.db);
-    }
-});
-*/
 mongoose.connect(keys.mongoURI);
-// const db = mongoose.connection;
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -94,7 +84,7 @@ app.use(function(req, res, next) {
 
 
 app.use('/', routes);
-// local 
+// local
 app.use('/users', users);
 // Oauth2
 app.use('/auth', auth);
