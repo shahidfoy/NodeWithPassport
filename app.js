@@ -94,7 +94,9 @@ app.use(function(req, res, next) {
 
 
 app.use('/', routes);
+// local 
 app.use('/users', users);
+// Oauth2
 app.use('/auth', auth);
 
 app.set('port', (process.env.PORT || 3000));
