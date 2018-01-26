@@ -30,6 +30,10 @@ router.get('/friends', ensureAuthenticated, function(req, res) {
     res.render('friends');
 });
 
+router.get('/privacy-policy', function(req, res) {
+    res.render('privacypolicy');
+});
+
 function ensureAuthenticated(req, res, next) {
     if(req.isAuthenticated()) {
         return next();
