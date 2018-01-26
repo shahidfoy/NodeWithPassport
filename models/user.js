@@ -17,12 +17,6 @@ var UserSchema = mongoose.Schema({
     },
     name: {
         type: String
-    },
-    googleId: {
-        type: String
-    },
-    facebookId: {
-        type: String
     }
 
 });
